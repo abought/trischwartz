@@ -1,0 +1,22 @@
+{
+  "name": "trischwartz",
+  "description": "Utilities for generating and drawing triangles",
+  "main": "dist/trischwartz.min.js",
+  "authors": [
+    "Andy Boughton"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "triangles",
+    "drawing",
+    "svg"
+  ],
+  "homepage": "https://github.com/abought/trischwartz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

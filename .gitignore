@@ -1,1 +1,7 @@
+/bower_components
 /node_modules
+npm-debug.log
+
+# Assets built from repo content
+/demo/trischwartz.js
+/dist/**/*

@@ -4,7 +4,9 @@
   "description": "Utilities for generating and drawing triangles",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:demo": "webpack  ./index.js demo/trischwartz.js",
+    "build:bower": "gulp bundle"
   },
   "keywords": [
     "triangles",
@@ -17,6 +19,7 @@
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
+    "gulp-bundle-assets": "^2.27.1",
     "webpack": "^1.14.0"
   }
 }
