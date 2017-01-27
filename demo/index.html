@@ -6,13 +6,13 @@
 <body>
 <h1>A web page</h1>
 
-<svg width=100 height=100 viewBox="0 0 2 2" preserveAspectRatio="true">
-    <polygon points="0,0 1,0 0.5,0.866" stroke="green" stroke-width=".1" fill="transparent"></polygon>
-    <rect height="2" width="2" stroke-width="0.05" fill="transparent" stroke="#000000"></rect>
+<svg width=100 height=100 viewBox="0 0 1 1" preserveAspectRatio="true">
+    <rect height="1" width="1" stroke-width="0.05" fill="transparent" stroke="#CCCCCC"></rect>
+    <polygon points="0,0 1,0 0.5,0.866" stroke="green" stroke-width=".1" fill="transparent" transform="rotate(180 0.5 0.5)"></polygon>
 </svg>
 
 <script>
-    console.log('Generating triangles:', generateTriangle(60,60,60));
+    console.log('Generating triangles:', generateCoords(60,60,60));
 </script>
 
 
