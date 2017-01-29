@@ -14,9 +14,9 @@
   "homepage": "https://github.com/abought/trischwartz",
   "ignore": [
     "**/.*",
+    "demo",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "test"
   ]
 }

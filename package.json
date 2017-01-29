@@ -4,7 +4,7 @@
   "description": "Utilities for generating and drawing triangles",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start",
     "build:demo": "webpack ./index.js demo/trischwartz.js",
     "build:bower": "gulp bundle"
   },
@@ -16,11 +16,21 @@
   "author": "Andy Boughton",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-bundle-assets": "^2.27.1",
+    "karma": "^1.4.0",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sinon": "^1.0.5",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.7",
     "webpack": "^1.14.0"
+  },
+  "dependencies": {
   }
 }

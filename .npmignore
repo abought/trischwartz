@@ -1,3 +1,5 @@
 /demo
+/test
+/dist
 .nvmrc
 yarn.lock
