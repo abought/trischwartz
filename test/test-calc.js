@@ -1,6 +1,5 @@
-// TODO: Test calculation functions
-
-// - Coord gen
+// Tests for coordinate generation
+chai.config.truncateThreshold = 0;
 describe('generateCoords', function() {
     it('generates an equilateral triangle', function() {
         const res = generateCoords(60, 60, 60);
@@ -10,4 +9,14 @@ describe('generateCoords', function() {
             [0,0], [1,0], [0.5000000000000001, 0.8660254037844386]
         ]);
     });
+});
+
+
+describe('generateAngles', function() {
+
+});
+
+
+describe('scaleCoords', function() {
+
 });
