@@ -26,28 +26,28 @@ describe('generateCoords', function() {
     it('generates a right triangle facing right', function() {
         const res = coordHelper(90, 45, 45);
         assert.deepEqual(res, [
-            ['0.000', '0.000'], ['1.000', '0.000' ], ['0.000', '1.000']
+            ['0.000', '0.000'], ['1.000', '0.000'], ['0.000', '1.000']
         ]);
     });
 
     it('generates a right triangle facing left', function() {
         const res = coordHelper(45, 90, 45);
         assert.deepEqual(res, [
-            ['0.000', '0.000'], ['1.000', '0.000' ], ['1.000', '1.000']
+            ['0.000', '0.000'], ['1.000', '0.000'], ['1.000', '1.000']
         ]);
     });
 
     it('generates an isosceles triangle', function() {
         const res = coordHelper(70, 70, 40);
         assert.deepEqual(res, [
-            ['0.000', '0.000'], ['1.000', '0.000' ], ['0.500', '1.374']
+            ['0.000', '0.000'], ['1.000', '0.000'], ['0.500', '1.374']
         ]);
     });
 
     it('generates an obtuse triangle', function() {
         const res = coordHelper(120, 30, 30);
         assert.deepEqual(res, [
-            ['0.000', '0.000'], ['1.000', '0.000' ], ['-0.500', '0.866']
+            ['0.000', '0.000'], ['1.000', '0.000'], ['-0.500', '0.866']
         ]);
     });
 });
@@ -99,5 +99,46 @@ describe('generateAngles', function() {
 
 
 describe('scaleCoords', function() {
+    it('scales three coordinates to fit inside a unit square', function() {
+        const coords = [
+            [0, 0], [1,1], [2,2]
+        ];
+        const res = scaleCoords(coords);
 
+        assert.deepEqual(res, [
+            [0, 0], [.5, .5], [1, 1]
+        ]);
+    });
+
+    it('translates and scales three coordinates to fit inside a unit square', function() {
+        const coords = [
+            [-2, -2], [-1, -1], [0, 0]
+        ];
+        const res = scaleCoords(coords);
+
+        assert.deepEqual(res, [
+            [0, 0], [.5, .5], [1, 1]
+        ]);
+    });
+
+    it('scales three coordinates, preserving aspect ratio', function() {
+        const coords = [
+            [0, 0], [1, 2], [1, 4]
+        ];
+        const res = scaleCoords(coords);
+
+        assert.deepEqual(res, [
+            [0, 0], [.25, .5], [.25, 1]
+        ]);
+    });
+
+    it('fits an obtuse triangle into a unit square', function() {
+        const coords = [
+            [0.000, 0.000], [1.000, 0.000], [-0.500, 0.866]
+        ];
+        const res = roundHelper(scaleCoords(coords));
+        assert.deepEqual(res, [
+            ['0.333', '0.000'], ['1.000', '0.000'], ['0.000', '0.577']
+        ]);
+    });
 });
