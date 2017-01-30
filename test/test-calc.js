@@ -71,14 +71,14 @@ describe('generateAngles', function() {
     });
 
     it('No angle can be less than the minimum', function() {
+        var minAngle = 25;
         sinon.stub(Math, 'random', function () {return 0;});
-        const res = generateAngles(30, 25);
+        const res = generateAngles(30, minAngle);
         Math.random.restore();
 
         assert.lengthOf(res, 3);
-
         assert.equal(res[0], 30);
-        assert.equal(res[1], 25);
+        assert.equal(res[1], minAngle);
         assert.equal(res.reduce(function(a,b) {return a+b}),
             180.0);
     });
