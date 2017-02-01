@@ -23,6 +23,13 @@ describe('generateCoords', function() {
         ]);
     });
 
+    it('can still calculate coords if only two angles given', function() {
+        const res = coordHelper(60, 60);
+        assert.deepEqual(res, [
+            ['0.000', '0.000'], ['1.000', '0.000'], ['0.500', '0.866']
+        ]);
+    });
+
     it('generates a right triangle facing right', function() {
         const res = coordHelper(90, 45, 45);
         assert.deepEqual(res, [
@@ -50,6 +57,15 @@ describe('generateCoords', function() {
             ['0.000', '0.000'], ['1.000', '0.000'], ['-0.500', '0.866']
         ]);
     });
+
+    it('throws an error if angles do not add to 180', function() {
+        assert.throws(coordHelper.bind(this, 10, 20, 30), 'Angles must add up to 180');
+    });
+
+    it('throws an error if angles are out of bounds', function() {
+        assert.throws(coordHelper.bind(this, -10, 120, 70), 'Specified angle is out of bounds');
+    });
+
 });
 
 
