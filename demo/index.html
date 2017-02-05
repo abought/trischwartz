@@ -1,28 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Sample page</title>
     <script type="text/javascript" src="../dist/trischwartz.min.js" charset="utf-8"></script>
 </head>
+
+<style>
+    .svg-container {
+        height: 50vh;
+        width: 50vh;
+    }
+</style>
 <body>
 <h1>A web page</h1>
 
-<svg width=400 height=400 viewBox="-1 -1 2 2" preserveAspectRatio="xMinYMin">
-    <rect height="2" width="2" x=-1 y=-1 stroke-width="0.05" fill="transparent" stroke="#CCCCCC"></rect>
-    <polygon points="0.333,0.000 1,0 0,.577" stroke="red" stroke-width=".05" fill="transparent" transform="rotate(180 0.5 0.5)"></polygon>
-</svg>
-
-
-<div id="mybox"></div>
+<div id="mybox" class="svg-container"></div>
 
 <script>
-    //console.log('Generating triangles:', generateCoords(60,60,60));
     var container = document.getElementById('mybox');
     var coords = generateCoords(60, 60, 60);
-    drawTriangle(container, coords);
+
+    var svg = createSvgContainer({width: '100%', height: '100%'});
+    var triangle = constructPolygon(coords, {'stroke-width': .02});
+    var rect = constructRect();
+    svg.appendChild(triangle);
+    svg.appendChild(rect);
+
+    container.appendChild(svg);
 
 </script>
-
-
 
 </body>
 
