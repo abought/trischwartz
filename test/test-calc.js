@@ -115,25 +115,25 @@ describe('generateAngles', function() {
 
 
 describe('scaleCoords', function() {
-    it('scales three coordinates to fit inside a unit square', function() {
+    it('scales three coordinates to fit inside a unit square centered at origin', function() {
         const coords = [
-            [0, 0], [1,1], [2,2]
+            [-1, -1], [0, 0], [1, 1]
         ];
         const res = scaleCoords(coords);
 
         assert.deepEqual(res, [
-            [0, 0], [.5, .5], [1, 1]
+            [-0.5, -0.5], [.0, .0], [0.5, 0.5]
         ]);
     });
 
-    it('translates and scales three coordinates to fit inside a unit square', function() {
+    it('translates and scales three coordinates to fit inside a unit square centered at origin', function() {
         const coords = [
             [-2, -2], [-1, -1], [0, 0]
         ];
         const res = scaleCoords(coords);
 
         assert.deepEqual(res, [
-            [0, 0], [.5, .5], [1, 1]
+            [-0.5, -0.5], [0, 0], [0.5, 0.5]
         ]);
     });
 
@@ -144,7 +144,7 @@ describe('scaleCoords', function() {
         const res = scaleCoords(coords);
 
         assert.deepEqual(res, [
-            [0, 0], [.25, .5], [.25, 1]
+            [-0.125, -0.5], [0.125, 0], [0.125, 0.5]
         ]);
     });
 
@@ -154,7 +154,7 @@ describe('scaleCoords', function() {
         ];
         const res = roundHelper(scaleCoords(coords));
         assert.deepEqual(res, [
-            ['0.333', '0.000'], ['1.000', '0.000'], ['0.000', '0.577']
+            ['-0.167', '-0.289'], ['0.500', '-0.289'], ['-0.500', '0.289']
         ]);
     });
 });
