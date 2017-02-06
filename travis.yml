@@ -1,0 +1,17 @@
+---
+dist: trusty
+language: node_js
+
+sudo: false
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - $HOME/.cache # includes bowers cache
+
+install:
+  - yarn install --pure-lockfile
+
+script:
+  - yarn test

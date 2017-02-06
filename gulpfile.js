@@ -8,3 +8,7 @@ gulp.task('bundle', function() {
     .pipe(bundle())
     .pipe(gulp.dest('./dist'));
 });
+
+gulp.task('watch', function() {
+  gulp.watch('lib/*', ['bundle']);
+});

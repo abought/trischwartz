@@ -4,9 +4,14 @@
   "description": "Utilities for generating and drawing triangles",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
+    "test": "karma start --single-run",
+    "test:live": "karma start",
     "build:demo": "webpack ./index.js demo/trischwartz.js",
-    "build:bower": "gulp bundle"
+    "build:bower": "gulp bundle",
+    "bump-version": "yarn --no-git-tag-version version ",
+    "preversion": "git-branch-is develop && yarn test",
+    "version": "yarn run build:bower",
+    "make-release": "git-branch-is develop && git flow release start $npm_package_version && git flow release finish $npm_package_version"
   },
   "keywords": [
     "triangles",
@@ -20,6 +25,7 @@
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
+    "git-branch-is": "^0.1.0",
     "gulp": "^3.9.1",
     "gulp-bundle-assets": "^2.27.1",
     "karma": "^1.4.0",

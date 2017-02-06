@@ -3,7 +3,3 @@
 npm-debug.log
 
 /coverage
-
-# Assets built from repo content
-/demo/trischwartz.js
-/dist/**/*

@@ -9,6 +9,16 @@ module.exports = {
                 rev: false,
                 maps: false
             }
+        },
+        'trischwartz': {
+            scripts: [
+                './lib/*.js'
+            ],
+            options: {
+                uglify: false,
+                rev: false,
+                maps: false
+            }
         }
     }
 };
