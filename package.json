@@ -9,6 +9,7 @@
     "build:bower": "gulp bundle",
     "bump-version": "yarn --no-git-tag-version version ",
     "preversion": "git-branch-is develop && yarn test",
+    "version": "yarn run build:bower",
     "make-release": "git-branch-is develop && git flow release start $npm_package_version && git flow release finish $npm_package_version"
   },
   "keywords": [
