@@ -4,7 +4,8 @@
   "description": "Utilities for generating and drawing triangles",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
+    "test": "karma start --single-run",
+    "test:live": "karma start",
     "build:demo": "webpack ./index.js demo/trischwartz.js",
     "build:bower": "gulp bundle",
     "bump-version": "yarn --no-git-tag-version version ",
