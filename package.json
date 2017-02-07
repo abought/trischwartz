@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start --single-run",
     "test:live": "karma start",
-    "build:demo": "webpack ./index.js demo/trischwartz.js",
+    "build:demo": "webpack ",
     "build:bower": "gulp bundle",
     "bump-version": "yarn --no-git-tag-version version ",
     "preversion": "git-branch-is develop && yarn test",

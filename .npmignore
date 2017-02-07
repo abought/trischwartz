@@ -8,3 +8,4 @@ bundle.config.js
 gulpfile.js
 karma.conf.js
 travis.yml
+webpack.config.js
