@@ -20,7 +20,3 @@ This module does three things:
   
 3. Creates an SVG element to draw and display a triangle in a page
 
-
-(to be written)
-
-

@@ -1,7 +1,7 @@
 {
   "name": "trischwartz",
   "description": "Utilities for generating and drawing triangles",
-  "main": "dist/trischwartz.min.js",
+  "main": "dist/trischwartz.js",
   "authors": [
     "Andy Boughton"
   ],

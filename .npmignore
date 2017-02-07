@@ -1,6 +1,10 @@
+/bower_components
 /coverage
 /demo
-/test
 /dist
+/test
 .nvmrc
-yarn.lock
+bundle.config.js
+gulpfile.js
+karma.conf.js
+travis.yml
