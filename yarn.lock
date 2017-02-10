@@ -2210,6 +2210,10 @@ karma-chai@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/karma-chai/-/karma-chai-0.1.0.tgz#bee5ad40400517811ae34bb945f762909108b79a"
 
+karma-commonjs@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/karma-commonjs/-/karma-commonjs-1.0.0.tgz#8681d5d7d606628c5f00a36e6aef3cf943c6b0a9"
+
 karma-coverage@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/karma-coverage/-/karma-coverage-1.1.1.tgz#5aff8b39cf6994dc22de4c84362c76001b637cf6"
