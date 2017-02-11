@@ -1,14 +1,13 @@
+[![Build Status](https://travis-ci.org/abought/trischwartz.svg?branch=develop)](https://travis-ci.org/abought/trischwartz)
+[![Coverage Status](https://coveralls.io/repos/github/abought/trischwartz/badge.svg?branch=develop)](https://coveralls.io/github/abought/trischwartz?branch=develop)
+
 # Trischwartz
 
-A library for generating and rendering arbitrary triangles
+A library for generating and rendering arbitrary triangles via SVG
 
 ## Installation
-In the future, this module will be available via either bower or npm registries.
-
-`npm install trischwartz --save-dev`
-
-`bower install trischwartz --save-dev`
-
+This module can be installed via NPM or Yarn:
+`yarn install trischwartz --save-dev`
 
 ## Usage
 
@@ -20,3 +19,9 @@ This module does three things:
   
 3. Creates an SVG element to draw and display a triangle in a page
 
+See the [webpack usage example](https://github.com/abought/trischwartz/blob/develop/demo/).
+
+## Development commands
+Run `yarn build:demo` to build the webpack asset bundle for the demo.
+
+Run unit tests via `yarn test` or `yarn test:live`.

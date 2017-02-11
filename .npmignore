@@ -1,11 +1,12 @@
 /bower_components
 /coverage
 /demo
-/dist
+/docs
 /test
+.idea
 .nvmrc
-bundle.config.js
-gulpfile.js
+.travis.yml
+bower.json
 karma.conf.js
-travis.yml
+jsdoc.conf.json
 webpack.config.js

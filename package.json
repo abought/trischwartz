@@ -4,12 +4,13 @@
   "description": "Utilities for generating and drawing triangles",
   "main": "index.js",
   "scripts": {
+    "docs": "jsdoc -c jsdoc.conf.json",
     "test": "karma start --single-run",
     "test:live": "karma start",
     "build:demo": "webpack ",
     "bump-version": "npm --no-git-tag-version version ",
     "preversion": "git-branch-is develop && yarn test",
-    "version": "yarn run build:demo",
+    "version": "yarn run build:demo && yarn run docs",
     "make-release": "git-branch-is develop && git flow release start $npm_package_version && git flow release finish $npm_package_version"
   },
   "keywords": [
@@ -26,6 +27,7 @@
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
     "git-branch-is": "^0.1.0",
+    "jsdoc": "^3.4.3",
     "karma": "^1.4.0",
     "karma-chai": "^0.1.0",
     "karma-commonjs": "^1.0.0",
