@@ -1,4 +1,7 @@
 // Tests for coordinate generation
+
+var calc = require('../lib/calc.js');
+
 chai.config.truncateThreshold = 0;
 
 function roundHelper(coords) {
@@ -13,7 +16,7 @@ function roundHelper(coords) {
 describe('generateCoords', function() {
     // Generate coordinates and round results as appropriate
     function coordHelper(ang1, ang2, ang3) {
-        return roundHelper(generateCoords(ang1, ang2, ang3));
+        return roundHelper(calc.generateCoords(ang1, ang2, ang3));
     }
 
     it('generates an equilateral triangle', function() {
@@ -71,14 +74,14 @@ describe('generateCoords', function() {
 
 describe('generateAngles', function() {
     it('generates three angles given none', function() {
-        const res = generateAngles();
+        const res = calc.generateAngles();
         assert.lengthOf(res, 3);
         assert.equal(res.reduce(function(a,b) {return a+b}),
             180.0);
     });
 
     it('generates two angles + uses the one given', function() {
-        const res = generateAngles(30);
+        const res = calc.generateAngles(30);
         assert.lengthOf(res, 3);
 
         assert.equal(res[0], 30);
@@ -89,7 +92,7 @@ describe('generateAngles', function() {
     it('No angle can be less than the minimum', function() {
         var minAngle = 25;
         sinon.stub(Math, 'random', function () {return 0;});
-        const res = generateAngles(30, minAngle);
+        const res = calc.generateAngles(30, minAngle);
         Math.random.restore();
 
         assert.lengthOf(res, 3);
@@ -102,7 +105,7 @@ describe('generateAngles', function() {
     it('A big angle leaves room for the others', function() {
         var minAngle = 25;
         sinon.stub(Math, 'random', function () {return 0.99999;});
-        const res = generateAngles(null, minAngle);
+        const res = calc.generateAngles(null, minAngle);
         Math.random.restore();
 
         assert.lengthOf(res, 3);
@@ -119,7 +122,7 @@ describe('scaleCoords', function() {
         const coords = [
             [-1, -1], [0, 0], [1, 1]
         ];
-        const res = scaleCoords(coords);
+        const res = calc.scaleCoords(coords);
 
         assert.deepEqual(res, [
             [-0.5, -0.5], [.0, .0], [0.5, 0.5]
@@ -130,7 +133,7 @@ describe('scaleCoords', function() {
         const coords = [
             [-2, -2], [-1, -1], [0, 0]
         ];
-        const res = scaleCoords(coords);
+        const res = calc.scaleCoords(coords);
 
         assert.deepEqual(res, [
             [-0.5, -0.5], [0, 0], [0.5, 0.5]
@@ -141,7 +144,7 @@ describe('scaleCoords', function() {
         const coords = [
             [0, 0], [1, 2], [1, 4]
         ];
-        const res = scaleCoords(coords);
+        const res = calc.scaleCoords(coords);
 
         assert.deepEqual(res, [
             [-0.125, -0.5], [0.125, 0], [0.125, 0.5]
@@ -152,7 +155,7 @@ describe('scaleCoords', function() {
         const coords = [
             [0.000, 0.000], [1.000, 0.000], [-0.500, 0.866]
         ];
-        const res = roundHelper(scaleCoords(coords));
+        const res = roundHelper(calc.scaleCoords(coords));
         assert.deepEqual(res, [
             ['-0.167', '-0.289'], ['0.500', '-0.289'], ['-0.500', '0.289']
         ]);
