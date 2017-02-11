@@ -1,8 +1,19 @@
 {
   "name": "trischwartz",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Utilities for generating and drawing triangles",
+  "author": "Andy Boughton",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abought/trischwartz.git"
+  },
   "main": "index.js",
+  "keywords": [
+    "triangles",
+    "drawing",
+    "svg"
+  ],
   "scripts": {
     "docs": "jsdoc -c jsdoc.conf.json",
     "test": "karma start --single-run",
@@ -13,13 +24,6 @@
     "version": "yarn run build:demo && yarn run docs",
     "make-release": "git-branch-is develop && git flow release start $npm_package_version && git flow release finish $npm_package_version"
   },
-  "keywords": [
-    "triangles",
-    "drawing",
-    "svg"
-  ],
-  "author": "Andy Boughton",
-  "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.11.16",
