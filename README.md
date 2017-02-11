@@ -12,10 +12,10 @@ This module can be installed via NPM or Yarn:
 ## Usage
 
 This module does three things:
+
 1. Generates three random angles that make up a triangle
 
-2. Calculates the coordinates for a triangle within a unit square, given 
-  a set of angles
+2. Calculates the coordinates for a triangle within a unit square, given angles
   
 3. Creates an SVG element to draw and display a triangle in a page
 
