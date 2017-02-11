@@ -7,7 +7,10 @@ A library for generating and rendering arbitrary triangles via SVG
 
 ## Installation
 This module can be installed via NPM or Yarn:
-`yarn install trischwartz --save-dev`
+
+`npm install trischwartz --save-dev`
+
+`yarn add trischwartz --dev`
 
 ## Usage
 
